@@ -1,8 +1,8 @@
 import pandas as pd
 
-STRAIN_SAMPLES = [f"CAMIStrain_shortReads_{val}" for val in range(100)] #matches name in sketch
+STRAIN_SAMPLES = [f"CAMIStrain_shortReads_{val}" for val in range(5)] #matches name in sketch
 STRAIN_OUTPUT_LOCATION = "/group/ctbrowngrp4/2025-olivas-chillFilter/data/CAMI_strainMadness"
-SCALE=10000
+SCALE=1000
 KMER_SIZES = [31, 51]
 DATABASE= "/group/datalabgrp/ctbrown/2025-cami-old-db/cami-refseq-db.sig.zip"
 
