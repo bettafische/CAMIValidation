@@ -1,10 +1,10 @@
 import pandas as pd
 
-STRAIN_SAMPLES = [f"CAMIStrain_shortReads_{val}" for val in range(1)] #matches name in sketch
+STRAIN_SAMPLES = [f"CAMIStrain_shortReads_{val}" for val in range(100)] #matches name in sketch
 STRAIN_OUTPUT_LOCATION = "/group/ctbrowngrp4/2025-olivas-chillFilter/data/CAMI_strainMadness"
 SCALE=10000
 KMER_SIZES = [31, 51]
-DATABASE="/group/datalabgrp/ctbrown/2025-cami-old-db/cami-refseq-db.sig.zip"
+DATABASE= "/group/datalabgrp/ctbrown/2025-cami-old-db/cami-refseq-db.sig.zip"
 
 def get_sigID(wildcards):
 	manifestPath = f"{STRAIN_OUTPUT_LOCATION}/shortReads/SOURMASH-MANIFEST.csv"
@@ -82,7 +82,7 @@ rule sketchSamples:
 		sketchManifest = f"{STRAIN_OUTPUT_LOCATION}/CAMI_StrainMadness_shortReads_Sketch.csv",
 	output:
 		zipfile = f"{STRAIN_OUTPUT_LOCATION}/shortReads/CAMI_StrainMadness_Signatures.zip",
-		sigDir = f"{STRAIN_OUTPUT_LOCATION}/shortReads/signatures/",
+		sigDir = directory(f"{STRAIN_OUTPUT_LOCATION}/shortReads/signatures"),
 		manifest = f"{STRAIN_OUTPUT_LOCATION}/shortReads/SOURMASH-MANIFEST.csv",
 	params:
 		scale = SCALE,
