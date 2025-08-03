@@ -4,4 +4,4 @@ for i in /group/ctbrowngrp4/2025-olivas-chillFilter/data/CAMI_marine/sampleDownl
 do
   sample=$(basename "$(dirname "$(dirname "$i")")" | sed 's/.*sample_//')
   echo CAMIMarine_longReads_$sample,$i,
-done >> /group/ctbrowngrp4/2025-olivas-chillFilter/data/CAMI_marine/CAMI_Plant_longReads_Sketch.csv
+done >> /group/ctbrowngrp4/2025-olivas-chillFilter/data/CAMI_marine/CAMI_Marine_longReads_Sketch.csv
